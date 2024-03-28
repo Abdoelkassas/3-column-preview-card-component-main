@@ -1,0 +1,144 @@
+/* Lexend Deca [font] */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+/* Big Shoulders Display [Font] */
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap');
+
+:root {
+    --clr-primary-hsl: 31, 77%, 52%;
+    --clr-second-primary-hsl: 184, 100%, 22%;
+    --clr-third-primary-hsl: 179, 100%, 13%;
+
+    --clr-neutral-white-hsl: 0, 0%, 100%;
+    --clr-neutral-light-gray-hsl: 0, 0%, 95%;
+
+    --clr-primary: hsl(var(--clr-primary-hsl));
+    --clr-second-primary: hsl(var(--clr-second-primary-hsl));
+    --clr-third-primary: hsl(var(--clr-third-primary-hsl));
+
+    --clr-neutral-white: hsl(var(--clr-neutral-white-hsl));
+    --clr-neutral-light-gray: hsl(var(--clr-neutral-light-gray-hsl));
+
+    --main-font-family: "Lexend Deca", sans-serif;
+    --second-font-family: "Big Shoulders Display", sans-serif;
+    
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: var(--main-font-family);
+}
+
+main.card {
+    max-width: 55rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    overflow: hidden;
+}
+
+/* Small screens */
+
+@media (max-width: 768px) {
+    main.card {
+        width: 100%;
+        grid-template-columns: 1fr;
+        height: 100%;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        overflow: scroll;
+    }
+
+    .attribution {
+        display: none;
+    }
+}
+
+main.card .column {
+    padding: 3.5rem 3rem;
+    display: grid;
+}
+
+.column h1 {
+    font-family: var(--second-font-family) !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--clr-neutral-white);
+    font-size: 2.5rem;
+}
+
+.column p {
+    color: hsl(var(--clr-neutral-white-hsl), .6);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.column button {
+    place-self: end;
+    margin-right: auto;
+    border: solid 2px hsl(var(--clr-neutral-white-hsl), 1);
+    background-color: hsl(var(--clr-neutral-white-hsl), 1);
+    border-radius: 100vw;
+    -webkit-border-radius: 100vw;
+    -moz-border-radius: 100vw;
+    -ms-border-radius: 100vw;
+    -o-border-radius: 100vw;
+    padding: 1rem 1.8rem;
+    transition: .7s;
+    -webkit-transition: .7s;
+    -moz-transition: .7s;
+    -ms-transition: .7s;
+    -o-transition: .7s;
+    cursor: pointer;
+}
+
+.column button:hover {
+    background-color: transparent;
+    color: hsl(var(--clr-neutral-white-hsl), 1);
+
+}
+
+main.card .sedans {
+    background-color: var(--clr-primary);
+}
+
+.sedans button {
+    color: var(--clr-primary);
+}
+
+main.card .suv {
+    background-color: var(--clr-second-primary);
+}
+
+.suv button {
+    color: var(--clr-second-primary)
+}
+
+.luxury button {
+    color: var(--clr-third-primary)
+}
+
+main.card .luxury {
+    background-color: var(--clr-third-primary);
+}
